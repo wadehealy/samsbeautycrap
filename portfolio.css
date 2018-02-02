@@ -1,0 +1,103 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.logo-row{
+  text-align: center;
+  line-height: 100px;
+}
+.logo-row h1{
+  margin: 0px;
+  vertical-align: middle;
+  color: #333;
+}
+.logo-row a{
+  text-decoration: none;
+  color: #333;
+}
+.instagram-icon{
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+.instagram-icon img{
+  height: 15px;
+  width: 18px;
+}
+nav {
+  overflow: hidden;
+  background-color: white;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+}
+nav .flex-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: DodgerBlue; */
+}
+nav .flex-container div {
+  text-align: center;
+  margin: 0px 20px;
+}
+
+nav .flex-container div a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 0px 16px 9px 16px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+nav .flex-container div a.active{
+  border-bottom: 3px solid #333;
+}
+
+hr{
+  margin: 0 0 6px 0;
+}
+
+.main .flex-container {
+  display: flex;
+  justify-content: center;
+}
+.main .flex-container div {
+  text-align: center;
+}
+
+.main .flex-container .gallery-column{
+  height: 100px;
+}
+
+.main .flex-container img{
+  width: 300px;
+  height: 300px;
+  margin: 6px 8px;
+}
+
+.main .prices{
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 10px;
+}
+.main .services {
+  margin: 20px;
+}
+
+.main .contact{
+  text-align: center;
+}
+
+
+
+
+
+aside{
+  flex: 1;
+}
+article{
+  flex: 4;
+} 
