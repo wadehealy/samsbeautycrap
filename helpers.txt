@@ -1,0 +1,11 @@
+
+
+
+client_id: 
+967847345665-rqk6hjj9s1271uhs3i3hji05imq19i6g.apps.googleusercontent.com
+
+client_secret:
+uOo1FBVnYEiK7ifR2VoHi5r8
+
+api_key:
+AIzaSyC5RMMzQYXlehvwKJc-90-GyqUUUqWJD5k
