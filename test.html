@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sam Cut Hair</title>
+<link rel="stylesheet" href="master.css"/>
+
+</head>
+<body>
+  <nav>
+    <div class="instagram-icon">
+      <a href="https://www.instagram.com/beauty.samhealy/" target="_blank"><img src="/images/instagram-icon.jpeg"/></a>
+    </div>
+    <div class="logo-row">
+      <!-- <img/> -->
+      <h1><a href="/index.html">Woman's Logo Here</a></h1>
+    </div>
+    <div class="flex-container">
+      <div><a href="/index.html">Home</a></div>
+      <div><a href="/gallery.html">Gallery</a></div>
+      <div><a href="/schedule.html">Schedule</a></div>
+      <div><a href="/prices.html">Prices</a></div>
+      <div><a href="/contact.html">Contact</a></div>
+      <div><a class="active" href="/about.html">About Me</a></div>
+    </div>
+  </nav>
+
+<div class="main">
+  <hr>
+  <div class="calendar-wrapper">
+    <div>
+      <button id="createAppointmentButton">Create Appointment</button>
+    </div>
+    <div>
+      <iframe src="https://calendar.google.com/calendar/embed?title=Sam%27s%20Beauty%20Crap&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=healy.wadem%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FDenver" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+      <form action="/test.html" id="form1" onsubmit="onSubmit()">
+        <input type="text" placeholder="First Name" name="fname"><br>
+        <input type="text" placeholder="Last Name" name="lname"><br>
+        <select name="type">
+          <option value="hair cut">Hair Cut</option>
+          <option value="shave my head">Head Shave</option>
+        </select>
+        <input name="monthYear" type="datetime-local">
+        <!-- <input type="submit" value="Submit"> -->
+      </form>
+      <button type="submit" form="form1" value"submit">Make Appointment</button>
+    </div>
+  </div>
+</div>
+
+<script>
+ // Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("createAppointmentButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+function onSubmit(){
+  console.log("%%%%%%%%%% you just submitted");
+
+  function calculateAppointmentEndTime(startTime, appointmentType){
+    console.log("%%%%%%%%%% finding end time");
+    var start = new Date(startTime);
+    var appointmentLength = parseInt(appointmentTimes[appointmentType]);
+    start.setHours(start.getHours() + appointmentLength);
+    start = start.toISOString();
+
+    return start;
+  }
+
+  var appointmentTimes ={
+    'hair cut': '1',
+    'shave my head': '2',
+  }
+
+  var myEvent = {
+    // 'summary': 'Hair cut thing',
+    'location': 'Nowhere important',
+    // 'description': 'I doubt this will work',
+    'start': {
+      'dateTime': '2018-02-16T09:00:00-07:00',
+      // 'timeZone': 'America/Los_Angeles'
+    },
+    'end': {
+      'dateTime': '2018-02-16T17:00:00-07:00',
+      // 'timeZone': 'America/Los_Angeles'
+    },
+    // 'recurrence': [
+    //   'RRULE:FREQ=DAILY;COUNT=2'
+    // ],
+    'attendees': [
+      {'email': 'healy.wadem@gmail.com'}
+    ],
+    'reminders': {
+      'useDefault': false,
+      'overrides': [
+        {'method': 'email', 'minutes': 24 * 60},
+        {'method': 'popup', 'minutes': 10}
+      ]
+    }
+  };
+
+  var firstName = document.getElementById("form1").elements[0].value;
+  var lastName = document.getElementById("form1").elements[1].value;
+  var appointmentType = document.getElementById("form1").elements[2].value;
+  var dateTime = document.getElementById("form1").elements[3].value;
+  var startDateTime = new Date(dateTime);
+  startDateTime = startDateTime.toISOString();
+  var endDateTime = calculateAppointmentEndTime(startDateTime, appointmentType); 
+  
+  // myEvent.summary = ("hello");
+
+  myEvent.summary = (appointmentType + ": " + firstName + " " + lastName);
+  myEvent.start.dateTime = startDateTime;
+  myEvent.end.dateTime = endDateTime;
+  
+  console.log("%%%%%%%%%% " + myEvent.summary);
+  debugger;
+
+}
+
+
+</script>
+
+</body>
+<footer>https://github.com/wadehealy/samsbeautycrap.git</footer>
+
+</html>
