@@ -40,7 +40,7 @@
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+          <p>Please fill in all the information to make your appointment.</p>
           <form action="/schedule.html" id="form1" onsubmit="onSubmit()">
             <input type="text" placeholder="First Name" name="fname"><br>
             <input type="text" placeholder="Last Name" name="lname"><br>
@@ -51,7 +51,7 @@
             <input name="datetime" type="datetime-local">
             <!-- <input type="submit" value="Submit"> -->
           </form>
-          <button id="submit-button" type="submit" form="form1" value="submit">Make Appointment</button>
+          <button id="submit-button" type="submit" form="form1" value="submit">Create Appointment</button>
         </div>
       </div>
     </div>
@@ -213,7 +213,7 @@
       }).then(function(response) {
         var events = response.result.items;
         appendPre('Upcoming events:');
-        debugger
+        
         if (events.length > 0) {
           for (i = 0; i < events.length; i++) {
             var event = events[i];
@@ -234,9 +234,9 @@
     }
 
     function addEvent(){
-      debugger;
+      
       console.log("You just clicked the add button bro");
-      debugger;
+      
       gapi.client.calendar.events.insert({
       // 'calendarId': 'e6srf6nk4ousc6fh8s8ufuh9eg@group.calendar.google.com',
       'calendarId' : 'primary',
@@ -334,9 +334,9 @@
       myEvent.end.dateTime = endDateTime;
 
 
-      debugger;
+      
       console.log("You just clicked the add button bro");
-      debugger;
+      
       gapi.client.calendar.events.insert({
       // 'calendarId': 'e6srf6nk4ousc6fh8s8ufuh9eg@group.calendar.google.com',
       'calendarId' : 'primary',
