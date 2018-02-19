@@ -117,8 +117,8 @@ article{
 }
 
 .calendar-wrapper button{
-  position: fixed;
-  margin: -15px 0px 0px 286px;
+  /* position: fixed; */
+  margin: 0px 0px 0px 680px;
 }
 
 .calendar{

@@ -9,3 +9,7 @@ uOo1FBVnYEiK7ifR2VoHi5r8
 
 api_key:
 AIzaSyC5RMMzQYXlehvwKJc-90-GyqUUUqWJD5k
+
+
+food2fork api_key: 
+a818a7635e9c88bdceb948d342f8b69d
