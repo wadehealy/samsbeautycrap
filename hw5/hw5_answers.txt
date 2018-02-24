@@ -1,0 +1,5 @@
+2a. socket() and connect()
+
+2b. nc -ul 1234
+
+2c. netstat -lup -n
