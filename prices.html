@@ -1,8 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sam Cut Hair</title>
-<link rel="stylesheet" href="portfolio.css"/>
+  <title>Sam Cut Hair</title>
+  <link rel="stylesheet" href="master.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="/script.js" async></script>
+
+  <!-- <scrip type="text/x-template" id="modal-template">
+    <transition name="modal">
+      <div class="modal-mask" @click="$emit('close')">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            
+            <div class="modal-header">
+              <slot name="header">
+                {{ service }}
+              </slot>
+            </div>
+
+            <div class="modal-body">
+              <slot name="body">
+                default shut up
+              </slot>
+            </div>
+
+            <div class="modal-footer">
+              <slot name="footer">
+                default footer
+                <button class="modal-default-button" @click="$emit('close')">
+                  OK
+                </button>
+              </slot>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </script> -->
+
 </head>
 <body>
   <nav>
@@ -14,56 +49,33 @@
       <h1><a href="/index.html">Woman's Logo Here</a></h1>
     </div>
     <div class="flex-container">
-      <div class="prices"><a href="/index.html">Home</a></div>
-      <div class="prices"><a href="/gallery.html">Gallery</a></div>
+      <div><a href="/index.html">Home</a></div>
+      <div><a href="/gallery.html">Gallery</a></div>
       <div><a href="/schedule.html">Schedule</a></div>
       <div><a class="active" href="/prices.html">Prices</a></div>
       <div><a href="/contact.html">Contact</a></div>
       <div><a href="/about.html">About Me</a></div>
+      <div><a href="/reviews.html">Reviews</a></div>
     </div>
   </nav>
 
-<div class="main">
-  <hr>
-  <div class="prices">
-    <div class="services">
-      Men's Cut - $15
-    </div>
-    <div class="services">
-      Women's Cut - $20
-    </div>
-    <div class="services">
-      Balayage - $90+
-    </div>
-    <div class="services">
-      Weave - $80+
-    </div>
-    <div class="services">
-      All Over Color - $50+
-    </div>
-    <div class="services">
-      Scalp Treatment - $15
-    </div>
-    <div class="services">
-      Wax - $15+
-    </div>
-    <div class="services">
-      Full Set of Lashes - $60+
-    </div>
-    <div class="services">
-      2 Week Fill - $30
-    </div>
-    <div class="services">
-      3 Week Fill - $45
-    </div>
-    <div class="services">
-      Microblading - $350
-    </div>
-  </div>
-  
-</div>
+  <div class="main" id="app">
+    <hr>
+    <div class="prices" id="prices"></div>
 
+    <div>
+      <modal v-if="showModal" @close="showModal = false" :service="modalInfo.service" :description="modalInfo.description" :image="modalInfo.image" :price="modalInfo.price">
+        <div ></div>
+      </modal>
+    </div>
+
+  </div>
+
+  <footer>
+      <a href="https://github.com/wadehealy/samsbeautycrap.git">Git Hub Link</a>
+      <p>Just as a note none of the pictures or descriptions are real. My wife didn't get the correct imformation to me in time ... So I made things up.</p>
+  </footer>
 
 </body>
-<footer>https://github.com/wadehealy/samsbeautycrap.git</footer>
+
 </html>

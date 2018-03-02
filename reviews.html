@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sam Cut Hair</title>
+  <link rel="stylesheet" href="portfolio.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="/script.js" async></script>
+</head>
+<body>
+  <nav>
+    <div class="instagram-icon">
+      <a href="https://www.instagram.com/beauty.samhealy/" target="_blank"><img src="/instagram-icon.jpeg"/></a>
+    </div>
+    <div class="logo-row">
+      <!-- <img/> -->
+      <h1><a href="/index.html">Woman's Logo Here</a></h1>
+    </div>
+    <div class="flex-container">
+      <div><a href="/index.html">Home</a></div>
+      <div><a href="/gallery.html">Gallery</a></div>
+      <div><a href="/schedule.html">Schedule</a></div>
+      <div><a href="/prices.html">Prices</a></div>
+      <div><a href="/contact.html">Contact</a></div>
+      <div><a href="/about.html">About Me</a></div>
+      <div><a class="active" href="/reviews.html">Reviews</a></div>
+    </div>
+  </nav>
+
+  <div class="main" id="app">
+    <hr>
+    <h3>Add a Review</h3>
+  	<form v-on:submit.prevent="addComment">
+  	  <input v-model="addedName" placeholder="Name"></p>
+  	  <textarea v-model="addedComment"></textarea>
+  	  <br/>
+  	  <button type="submit">Comment</button>
+    </form>
+  	<h3>Reviews</h3>
+  	<div v-for="comment in comments[0]">
+      <hr>
+  	  <p>{{comment.text}}</p>
+  	  <p><i>-- {{comment.author}} {{comment.dateTime}}</i></p>
+    </div>
+  </div>
+
+  
+  <footer>
+    <a href="https://github.com/wadehealy/samsbeautycrap.git">Git Hub Link</a>
+  </footer>
+</body>
+</html>

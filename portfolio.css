@@ -82,6 +82,7 @@ hr{
   letter-spacing: 3px;
   text-align: center;
   margin-top: 10px;
+  cursor: pointer;
 }
 .main .services {
   margin: 20px;
