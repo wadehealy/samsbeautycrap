@@ -154,3 +154,12 @@ article{
   float: right;
   width: 300px;
 }
+
+.review-input{
+  height: 200px;
+  width: 450px;
+}
+
+button{
+  margin-bottom: 10px;
+}

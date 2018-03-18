@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sam Cut Hair</title>
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-  <script src="/script.js" async></script>
+  <title>Sam Cut Hair</title>
 </head>
 <body>
   <nav>
@@ -26,26 +25,29 @@
     </div>
   </nav>
 
-  <div class="main" id="app">
-    <hr>
-    <h3>Add a Review</h3>
-  	<form v-on:submit.prevent="addComment">
-  	  <input v-model="addedName" placeholder="Name"></p>
-  	  <textarea v-model="addedComment"></textarea>
-  	  <br/>
-  	  <button type="submit">Comment</button>
+  <div id="app">
+    <hr/>
+    <h1>Leave a Review</h1>
+
+    <form v-on:submit.prevent="addItem">
+      <input v-model="author" placeholder="Name"></p>
+      <textarea v-model="text"></textarea>
+      <br/>
+      <button type="submit">Comment</button>
     </form>
-  	<h3>Reviews</h3>
-  	<div v-for="comment in comments[0]">
-      <hr>
-  	  <p>{{comment.text}}</p>
-  	  <p><i>-- {{comment.author}} {{comment.dateTime}}</i></p>
-    </div>
+    <ul>
+      <li v-for="item in filteredItems">
+          <hr>
+          <p>{{item.text}}</p>
+          <p><i>-- {{item.author}}</i></p>
+          <p># of people how have read this review: {{item.readReview}} </p>
+          <button v-on:click="addReadReview(item)">I read this review</button><button v-on:click="deleteReview(item)">Remove Review</button>
+      </li>
+    </ul>
   </div>
 
-  
-  <footer>
-    <a href="https://github.com/wadehealy/samsbeautycrap.git">Git Hub Link</a>
-  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" integrity="sha256-pU9euBaEcVl8Gtg+FRYCtin2vKLN8sx5/4npZDmY2VA=" crossorigin="anonymous"></script>
+  <script src="/reviews.js"></script>
 </body>
 </html>
